@@ -2,10 +2,8 @@ import React, { useState } from "react";
 
 const Pokemon = (props) => {
     const [pokemon, setPokemon] = useState([]);
-    const [clickStatus, setClickStatus] = useState(false);
 
     const fetchPokemon = () => {
-        setClickStatus(true);
         fetch("https://pokeapi.co/api/v2/pokemon")
             .then(response => response.json())
             .then(response => setPokemon(response.results))
